@@ -1,0 +1,65 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - 'master'
+    tags:
+      - 'v*'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build base image
+        run: docker compose build base
+
+      - name: Build base dependent images
+        run: docker compose build mdbook shell-*
+
+      - name: Build shell-* dependent image
+        run: docker compose build shell
+
+      - name: Build shell dependent image
+        run: docker compose build vhs
+
+      - name: Upload the images
+        run: |
+          tag=latest
+          [[ "$GITHUB_REF" =~ ^refs/tags/ ]] && tag="${GITHUB_REF/refs\/tags\//}"
+          docker image tag ghcr.io/carapace-sh/base             ghcr.io/carapace-sh/base:${tag}
+          docker image tag ghcr.io/carapace-sh/mdbook           ghcr.io/carapace-sh/mdbook:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-bash-ble   ghcr.io/carapace-sh/shell-bash-ble:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-elvish     ghcr.io/carapace-sh/shell-elvish:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-fish       ghcr.io/carapace-sh/shell-fish:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-nushell    ghcr.io/carapace-sh/shell-nushell:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-oil        ghcr.io/carapace-sh/shell-oil:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-powershell ghcr.io/carapace-sh/shell-powershell:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-xonsh      ghcr.io/carapace-sh/shell-xonsh:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-zsh        ghcr.io/carapace-sh/shell-zsh:${tag}
+          docker image tag ghcr.io/carapace-sh/shell            ghcr.io/carapace-sh/shell:${tag}
+          docker image tag ghcr.io/carapace-sh/vhs              ghcr.io/carapace-sh/vhs:${tag}
+
+          docker image push ghcr.io/carapace-sh/base:${tag}
+          docker image push ghcr.io/carapace-sh/mdbook:${tag}
+          docker image push ghcr.io/carapace-sh/shell-bash-ble:${tag}
+          docker image push ghcr.io/carapace-sh/shell-elvish:${tag}
+          docker image push ghcr.io/carapace-sh/shell-fish:${tag}
+          docker image push ghcr.io/carapace-sh/shell-nushell:${tag}
+          docker image push ghcr.io/carapace-sh/shell-oil:${tag}
+          docker image push ghcr.io/carapace-sh/shell-powershell:${tag}
+          docker image push ghcr.io/carapace-sh/shell-xonsh:${tag}
+          docker image push ghcr.io/carapace-sh/shell-zsh:${tag}
+          docker image push ghcr.io/carapace-sh/shell:${tag}
+          docker image push ghcr.io/carapace-sh/vhs:${tag}

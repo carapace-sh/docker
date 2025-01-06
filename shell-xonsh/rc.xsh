@@ -1,0 +1,6 @@
+
+$STARSHIP_SHELL="xonsh"
+$PROMPT=lambda: $(starship prompt)
+
+$COMPLETIONS_CONFIRM=True
+$COMPLETION_QUERY_LIMIT = 500

@@ -1,0 +1,49 @@
+services:
+  base:
+    build: base
+    image: ghcr.io/carapace-sh/base
+
+  mdbook:
+    build: mdbook
+    image: ghcr.io/carapace-sh/mdbook
+    
+
+  shell-bash-ble:
+    build: shell-bash-ble
+    image: ghcr.io/carapace-sh/shell-bash-ble
+
+  shell-elvish:
+    build: shell-elvish
+    image: ghcr.io/carapace-sh/shell-elvish
+
+  shell-fish:
+    build: shell-fish
+    image: ghcr.io/carapace-sh/shell-fish
+
+  shell-nushell:
+    build: shell-nushell
+    image: ghcr.io/carapace-sh/shell-nushell
+
+  shell-oil:
+    build: shell-oil
+    image: ghcr.io/carapace-sh/shell-oil
+
+  shell-powershell:
+    build: shell-powershell
+    image: ghcr.io/carapace-sh/shell-powershell
+
+  shell-xonsh:
+    build: shell-xonsh
+    image: ghcr.io/carapace-sh/shell-xonsh
+
+  shell-zsh:
+    build: shell-zsh
+    image: ghcr.io/carapace-sh/shell-zsh
+
+  shell:
+    build: shell
+    image: ghcr.io/carapace-sh/shell
+
+  vhs:
+    build: vhs
+    image: ghcr.io/carapace-sh/vhs

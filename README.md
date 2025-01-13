@@ -17,6 +17,20 @@ Build/test containers.
 | [shell](./shell/Dockerfile)                       | base+shell-*      |
 | [vhs](./vhs/Dockerfile)                           | shell+[vhs]       |
 
+Additional init file instruction (e.g. `.bashrc`) can be set with:
+
+| Environment      |
+| ---------------- |
+| `$RC_BASH`       |
+| `$RC_BASH_BLE`   |
+| `$RC_ELVISH`     |
+| `$RC_FISH`       |
+| `$RC_NUSHELL`    |
+| `$RC_OIL`        |
+| `$RC_POWERSHELL` |
+| `$RC_XONSH`      |
+| `$RC_ZSH`        |
+
 [mdbook]:https://github.com/rust-lang/mdBook
 [bash-ble]:https://github.com/akinomyoga/ble.sh
 [elvish]:https://github.com/elves/elvish

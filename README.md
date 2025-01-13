@@ -12,6 +12,7 @@ Build/test containers.
 | [shell-nushell](./shell-nushell/Dockerfile)       | base+[nushell]    |
 | [shell-oil](./shell-oil/Dockerfile)               | base+[oil]        |
 | [shell-powershell](./shell-powershell/Dockerfile) | base+[powershell] |
+| [shell-tcsh](./shell-tcsh/Dockerfile)             | base+[tcsh]       |
 | [shell-xonsh](./shell-xonsh/Dockerfile)           | base+[xonsh]      |
 | [shell-zsh](./shell-zsh/Dockerfile)               | base+[zsh]        |
 | [shell](./shell/Dockerfile)                       | base+shell-*      |
@@ -28,6 +29,7 @@ Additional init file instruction (e.g. `.bashrc`) can be set with:
 | `$RC_NUSHELL`    |
 | `$RC_OIL`        |
 | `$RC_POWERSHELL` |
+| `$RC_TCSH`       |
 | `$RC_XONSH`      |
 | `$RC_ZSH`        |
 
@@ -38,6 +40,7 @@ Additional init file instruction (e.g. `.bashrc`) can be set with:
 [nushell]:https://github.com/nushell/nushell
 [oil]:https://github.com/oils-for-unix/oils
 [powershell]:https://github.com/PowerShell/PowerShell
+[tcsh]:https://www.tcsh.org/
 [xonsh]:https://github.com/xonsh/xonsh
 [zsh]:https://www.zsh.org/
 [vhs]:https://github.com/charmbracelet/vhs

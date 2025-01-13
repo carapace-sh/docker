@@ -6,6 +6,7 @@
 [ -z "$RC_NUSHELL" ]    || echo "$RC_NUSHELL"    >> /root/.config/nushell/env.nu
 [ -z "$RC_OIL" ]        || echo "$RC_OIL"        >> /root/.config/oils/oshrc
 [ -z "$RC_POWERSHELL" ] || echo "$RC_POWERSHELL" >> /root/.config/powershell/profile.ps1
+[ -z "$RC_TCSH" ]       || echo "$RC_TCSH"       >> /root/.tcshrc
 [ -z "$RC_XONSH" ]      || echo "$RC_XONSH"      >> /root/.config/xonsh/rc.xsh
 [ -z "$RC_ZSH" ]        || echo "$RC_ZSH"        >> /root/.zshrc
 

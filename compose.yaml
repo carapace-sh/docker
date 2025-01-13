@@ -32,6 +32,10 @@ services:
     build: shell-powershell
     image: ghcr.io/carapace-sh/shell-powershell
 
+  shell-tcsh:
+    build: shell-tcsh
+    image: ghcr.io/carapace-sh/shell-tcsh
+
   shell-xonsh:
     build: shell-xonsh
     image: ghcr.io/carapace-sh/shell-xonsh

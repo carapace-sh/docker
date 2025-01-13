@@ -46,6 +46,7 @@ jobs:
           docker image tag ghcr.io/carapace-sh/shell-nushell    ghcr.io/carapace-sh/shell-nushell:${tag}
           docker image tag ghcr.io/carapace-sh/shell-oil        ghcr.io/carapace-sh/shell-oil:${tag}
           docker image tag ghcr.io/carapace-sh/shell-powershell ghcr.io/carapace-sh/shell-powershell:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-tcsh       ghcr.io/carapace-sh/shell-tcsh:${tag}
           docker image tag ghcr.io/carapace-sh/shell-xonsh      ghcr.io/carapace-sh/shell-xonsh:${tag}
           docker image tag ghcr.io/carapace-sh/shell-zsh        ghcr.io/carapace-sh/shell-zsh:${tag}
           docker image tag ghcr.io/carapace-sh/shell            ghcr.io/carapace-sh/shell:${tag}
@@ -59,6 +60,7 @@ jobs:
           docker image push ghcr.io/carapace-sh/shell-nushell:${tag}
           docker image push ghcr.io/carapace-sh/shell-oil:${tag}
           docker image push ghcr.io/carapace-sh/shell-powershell:${tag}
+          docker image push ghcr.io/carapace-sh/shell-tcsh:${tag}
           docker image push ghcr.io/carapace-sh/shell-xonsh:${tag}
           docker image push ghcr.io/carapace-sh/shell-zsh:${tag}
           docker image push ghcr.io/carapace-sh/shell:${tag}

@@ -29,9 +29,9 @@ jobs:
         run: docker compose build mdbook shell-*
 
       - name: Build shell-* dependent image
-        run: docker compose build shell
+        run: docker compose build dev
 
-      - name: Build shell dependent image
+      - name: Build dev dependent image
         run: docker compose build vhs
 
       - name: Upload the images
@@ -49,7 +49,7 @@ jobs:
           docker image tag ghcr.io/carapace-sh/shell-tcsh       ghcr.io/carapace-sh/shell-tcsh:${tag}
           docker image tag ghcr.io/carapace-sh/shell-xonsh      ghcr.io/carapace-sh/shell-xonsh:${tag}
           docker image tag ghcr.io/carapace-sh/shell-zsh        ghcr.io/carapace-sh/shell-zsh:${tag}
-          docker image tag ghcr.io/carapace-sh/shell            ghcr.io/carapace-sh/shell:${tag}
+          docker image tag ghcr.io/carapace-sh/dev              ghcr.io/carapace-sh/dev:${tag}
           docker image tag ghcr.io/carapace-sh/vhs              ghcr.io/carapace-sh/vhs:${tag}
 
           docker image push ghcr.io/carapace-sh/base:${tag}
@@ -63,5 +63,5 @@ jobs:
           docker image push ghcr.io/carapace-sh/shell-tcsh:${tag}
           docker image push ghcr.io/carapace-sh/shell-xonsh:${tag}
           docker image push ghcr.io/carapace-sh/shell-zsh:${tag}
-          docker image push ghcr.io/carapace-sh/shell:${tag}
+          docker image push ghcr.io/carapace-sh/dev:${tag}
           docker image push ghcr.io/carapace-sh/vhs:${tag}

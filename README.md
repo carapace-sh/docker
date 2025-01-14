@@ -15,8 +15,8 @@ Build/test containers.
 | [shell-tcsh](./shell-tcsh/Dockerfile)             | base+[tcsh]       |
 | [shell-xonsh](./shell-xonsh/Dockerfile)           | base+[xonsh]      |
 | [shell-zsh](./shell-zsh/Dockerfile)               | base+[zsh]        |
-| [shell](./shell/Dockerfile)                       | base+shell-*      |
-| [vhs](./vhs/Dockerfile)                           | shell+[vhs]       |
+| [dev](./dev/Dockerfile)                           | base+[go]+shell-* |
+| [vhs](./vhs/Dockerfile)                           | dev+[vhs]         |
 
 Additional init file instruction (e.g. `.bashrc`) can be set with:
 
@@ -44,4 +44,5 @@ Additional init file instruction (e.g. `.bashrc`) can be set with:
 [tcsh]:https://www.tcsh.org/
 [xonsh]:https://github.com/xonsh/xonsh
 [zsh]:https://www.zsh.org/
+[go]:https://go.dev/
 [vhs]:https://github.com/charmbracelet/vhs

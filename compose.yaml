@@ -5,8 +5,7 @@ services:
 
   mdbook:
     build: mdbook
-    image: ghcr.io/carapace-sh/mdbook
-    
+    image: ghcr.io/carapace-sh/mdbook    
 
   shell-bash-ble:
     build: shell-bash-ble
@@ -44,9 +43,9 @@ services:
     build: shell-zsh
     image: ghcr.io/carapace-sh/shell-zsh
 
-  shell:
-    build: shell
-    image: ghcr.io/carapace-sh/shell
+  dev:
+    build: dev
+    image: ghcr.io/carapace-sh/dev
 
   vhs:
     build: vhs

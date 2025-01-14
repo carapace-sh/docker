@@ -1,5 +1,5 @@
 #!/bin/bash
-[ -z "$RC_BASH" ]        || echo "$RC_BASH"        >> ~/.bashrc
+[ -z "$RC_BASH" ]        || echo "$RC_BASH"        >> /root/.bashrc
 [ -z "$RC_BASH_BLE" ]    || echo "$RC_BASH_BLE"    >> /root/.config/bash-ble/blerc
 [ -z "$RC_ELVISH" ]      || echo "$RC_ELVISH"      >> /root/.config/elvish/rc.elv
 [ -z "$RC_FISH" ]        || echo "$RC_FISH"        >> /root/.config/fish/config.fish

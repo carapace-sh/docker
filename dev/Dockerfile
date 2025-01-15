@@ -17,6 +17,9 @@ COPY --from=ghcr.io/carapace-sh/shell-nushell /usr/local/bin/nu /usr/local/bin/n
 COPY --from=ghcr.io/carapace-sh/shell-nushell /root/.config/nushell /root/.config/nushell
 
 COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/osh /usr/local/bin/osh
+COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/oil /usr/local/bin/oil
+COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/oil.ovm /usr/local/bin/oil.ovm
+COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/ysh /usr/local/bin/ysh
 COPY --from=ghcr.io/carapace-sh/shell-oil /root/.config/oils /root/.config/oils
 
 COPY --from=ghcr.io/carapace-sh/shell-powershell /opt/microsoft/ /opt/microsoft

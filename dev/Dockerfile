@@ -2,6 +2,8 @@ FROM ghcr.io/carapace-sh/base
 
 RUN apt-get update && apt-get install -y fish git libicu72 xonsh zsh
 
+RUN git config --system safe.directory '*'
+
 RUN curl -L https://go.dev/dl/go1.23.4.linux-amd64.tar.gz | tar -C /usr/local -xzf -
 ENV PATH=$PATH:/usr/local/go/bin
 

@@ -1,7 +1,9 @@
 FROM ghcr.io/carapace-sh/base
 ARG version=0.4.43
 
-RUN apt-get update && apt-get install -y unzip
+RUN apt-get update && apt-get install -y git unzip
+
+RUN git config --system safe.directory '*'
 
 RUN curl -L "https://github.com/rust-lang/mdBook/releases/download/v${version}/mdbook-v${version}-x86_64-unknown-linux-gnu.tar.gz" | tar -xvz mdbook \
  && mv mdbook /usr/local/bin/

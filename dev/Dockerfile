@@ -9,6 +9,7 @@ ENV PATH=$PATH:/usr/local/go/bin
 
 COPY --from=ghcr.io/carapace-sh/shell-cmd /usr/local/bin/cmd /usr/local/bin/cmd
 ENV WINEDEBUG=-all
+ENV WINEPREFIX=/root/.wine
 RUN apt-get update && apt-get install -y wine \
  && cmd /c echo
 

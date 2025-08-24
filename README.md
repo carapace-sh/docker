@@ -7,6 +7,7 @@ Build/test containers.
 | [base](./base/Dockerfile)                         | base image        |
 | [mdbook](./mdbook/Dockerfile)                     | base+[mdbook]     |
 | [shell-bash-ble](./shell-bash-ble/Dockerfile)     | base+[bash-ble]   |
+| [shell-cmd](./shell-cmd/Dockerfile)               | base+[cmd]        |
 | [shell-elvish](./shell-elvish/Dockerfile)         | base+[elvish]     |
 | [shell-fish](./shell-fish/Dockerfile)             | base+[fish]       |
 | [shell-nushell](./shell-nushell/Dockerfile)       | base+[nushell]    |
@@ -36,6 +37,7 @@ Additional init file instruction (e.g. `.bashrc`) can be set with:
 
 [mdbook]:https://github.com/rust-lang/mdBook
 [bash-ble]:https://github.com/akinomyoga/ble.sh
+[cmd]:https://en.wikipedia.org/wiki/Cmd.exe
 [elvish]:https://github.com/elves/elvish
 [fish]:https://github.com/fish-shell/fish-shell
 [nushell]:https://github.com/nushell/nushell

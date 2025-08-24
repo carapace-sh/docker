@@ -41,6 +41,7 @@ jobs:
           docker image tag ghcr.io/carapace-sh/base             ghcr.io/carapace-sh/base:${tag}
           docker image tag ghcr.io/carapace-sh/mdbook           ghcr.io/carapace-sh/mdbook:${tag}
           docker image tag ghcr.io/carapace-sh/shell-bash-ble   ghcr.io/carapace-sh/shell-bash-ble:${tag}
+          docker image tag ghcr.io/carapace-sh/shell-cmd        ghcr.io/carapace-sh/shell-cmd:${tag}
           docker image tag ghcr.io/carapace-sh/shell-elvish     ghcr.io/carapace-sh/shell-elvish:${tag}
           docker image tag ghcr.io/carapace-sh/shell-fish       ghcr.io/carapace-sh/shell-fish:${tag}
           docker image tag ghcr.io/carapace-sh/shell-nushell    ghcr.io/carapace-sh/shell-nushell:${tag}
@@ -55,6 +56,7 @@ jobs:
           docker image push ghcr.io/carapace-sh/base:${tag}
           docker image push ghcr.io/carapace-sh/mdbook:${tag}
           docker image push ghcr.io/carapace-sh/shell-bash-ble:${tag}
+          docker image push ghcr.io/carapace-sh/shell-cmd:${tag}
           docker image push ghcr.io/carapace-sh/shell-elvish:${tag}
           docker image push ghcr.io/carapace-sh/shell-fish:${tag}
           docker image push ghcr.io/carapace-sh/shell-nushell:${tag}

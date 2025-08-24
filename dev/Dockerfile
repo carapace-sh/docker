@@ -7,6 +7,10 @@ RUN git config --system safe.directory '*'
 RUN curl -L https://go.dev/dl/go1.23.4.linux-amd64.tar.gz | tar -C /usr/local -xzf -
 ENV PATH=$PATH:/usr/local/go/bin
 
+COPY --from=ghcr.io/carapace-sh/shell-cmd /usr/local/bin/cmd /usr/local/bin/cmd
+RUN apt-get update && apt-get install -y wine \
+ && cmd /c echo
+
 COPY --from=ghcr.io/carapace-sh/shell-bash-ble /usr/local/bin/bash-ble /usr/local/bin/bash-ble
 COPY --from=ghcr.io/carapace-sh/shell-bash-ble /root/.config/bash-ble /root/.config/bash-ble
 

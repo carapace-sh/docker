@@ -11,6 +11,10 @@ services:
     build: shell-bash-ble
     image: ghcr.io/carapace-sh/shell-bash-ble
 
+  shell-cmd:
+    build: shell-cmd
+    image: ghcr.io/carapace-sh/shell-cmd
+
   shell-elvish:
     build: shell-elvish
     image: ghcr.io/carapace-sh/shell-elvish

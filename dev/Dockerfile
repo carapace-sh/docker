@@ -8,6 +8,7 @@ RUN curl -L https://go.dev/dl/go1.23.4.linux-amd64.tar.gz | tar -C /usr/local -x
 ENV PATH=$PATH:/usr/local/go/bin
 
 COPY --from=ghcr.io/carapace-sh/shell-cmd /usr/local/bin/cmd /usr/local/bin/cmd
+ENV WINEDEBUG=-all
 RUN apt-get update && apt-get install -y wine \
  && cmd /c echo
 

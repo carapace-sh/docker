@@ -1,5 +1,5 @@
 FROM ghcr.io/carapace-sh/base
-ARG version=0.4.51
+ARG version=0.4.52
 
 RUN apt-get update && apt-get install -y git unzip
 

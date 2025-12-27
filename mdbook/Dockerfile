@@ -1,7 +1,7 @@
 FROM ghcr.io/carapace-sh/base
 ARG version=0.4.51
 
-RUN apt-get update && apt-get install -y git unzip
+RUN apt-get update && apt-get install -y git jq unzip
 
 RUN git config --system safe.directory '*'
 

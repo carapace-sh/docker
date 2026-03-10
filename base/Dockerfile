@@ -2,7 +2,7 @@ FROM debian:bookworm-slim AS base
 
 RUN apt-get update && apt-get install -y curl
 
-ARG version=1.21.1
+ARG version=1.24.2
 RUN curl -L "https://github.com/starship/starship/releases/download/v${version}/starship-x86_64-unknown-linux-gnu.tar.gz" | tar -xvz starship \
  && mv starship /usr/local/bin/
 

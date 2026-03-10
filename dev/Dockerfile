@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y fish git libicu72 xonsh zsh
 
 RUN git config --system safe.directory '*'
 
-RUN curl -L https://go.dev/dl/go1.25.5.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+RUN curl -L https://go.dev/dl/go1.26.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
 ENV PATH=$PATH:/usr/local/go/bin
 
 COPY --from=ghcr.io/carapace-sh/shell-cmd /usr/local/bin/cmd /usr/local/bin/cmd
@@ -24,9 +24,8 @@ COPY --from=ghcr.io/carapace-sh/shell-fish /root/.config/fish /root/.config/fish
 COPY --from=ghcr.io/carapace-sh/shell-nushell /usr/local/bin/nu /usr/local/bin/nu
 COPY --from=ghcr.io/carapace-sh/shell-nushell /root/.config/nushell /root/.config/nushell
 
+COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/oils-for-unix /usr/local/bin/oils-for-unix
 COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/osh /usr/local/bin/osh
-COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/oil /usr/local/bin/oil
-COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/oil.ovm /usr/local/bin/oil.ovm
 COPY --from=ghcr.io/carapace-sh/shell-oil /usr/local/bin/ysh /usr/local/bin/ysh
 COPY --from=ghcr.io/carapace-sh/shell-oil /root/.config/oils /root/.config/oils
 

@@ -1,5 +1,5 @@
 FROM ghcr.io/carapace-sh/base
-ARG version=7.5.4
+ARG version=7.6.3
 ARG build=1
 
 RUN apt-get update && apt-get install -y libicu72

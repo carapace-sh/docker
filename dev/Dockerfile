@@ -1,6 +1,7 @@
 FROM ghcr.io/carapace-sh/base
 
-RUN apt-get update && apt-get install -y fish git libicu72 xonsh zsh
+RUN apt-get update && apt-get install -y fish git libicu72 python3-pip zsh \
+ && pip3 install --break-system-packages 'xonsh[full]'
 
 RUN git config --system safe.directory '*'
 

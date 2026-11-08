@@ -1,5 +1,6 @@
 FROM ghcr.io/carapace-sh/base
 ARG version=0.4.52
+ARG asciinema_version=0.0.2
 
 RUN apt-get update && apt-get install -y git jq unzip
 
@@ -13,3 +14,5 @@ RUN curl -L "https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/downlo
  && rm mdbook-linkcheck.zip \
  && chmod +x mdbook-linkcheck \
  && mv mdbook-linkcheck /usr/local/bin/
+RUN curl -L "https://github.com/carapace-sh/mdbook-asciinema/releases/download/v${asciinema_version}/mdbook-asciinema_${asciinema_version}_linux_amd64.tar.gz" | tar -xvz mdbook-asciinema \
+ && mv mdbook-asciinema /usr/local/bin/

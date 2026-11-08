@@ -1,6 +1,6 @@
 FROM ghcr.io/carapace-sh/base
 ARG version=0.4.52
-ARG asciinema_version=0.0.2
+ARG asciinema_version=0.0.3
 
 RUN apt-get update && apt-get install -y git jq unzip
 

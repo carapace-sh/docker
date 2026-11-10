@@ -4,3 +4,5 @@ $PROMPT=lambda: $(starship prompt)
 
 $COMPLETIONS_CONFIRM=True
 $COMPLETION_QUERY_LIMIT = 500
+
+exec($(tt _carapace xonsh))

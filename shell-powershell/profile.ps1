@@ -3,3 +3,5 @@ Invoke-Expression (&starship init powershell)
 
 Set-PSReadLineOption -Colors @{ "Selection" = "`e[7m" }
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
+tt _carapace powershell | Out-String | Invoke-Expression

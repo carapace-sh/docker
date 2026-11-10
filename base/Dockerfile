@@ -6,6 +6,10 @@ ARG version=1.27.0
 RUN curl -L "https://github.com/starship/starship/releases/download/v${version}/starship-x86_64-unknown-linux-gnu.tar.gz" | tar -xvz starship \
  && mv starship /usr/local/bin/
 
+ARG tabdance_test_version=0.0.7
+RUN curl -L "https://github.com/tab-dance/tabdance-test/releases/download/v${tabdance_test_version}/tabdance-test_${tabdance_test_version}_linux_amd64.tar.gz" | tar -xvz tt \
+ && mv tt /usr/local/bin/
+
 ADD starship.toml /root/.config/
 ADD bashrc.sh /root/.bashrc
 

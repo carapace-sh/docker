@@ -34,4 +34,11 @@ $env.config = {
 
 use ~/.cache/starship/init.nu
 source ~/.cache/tt/init.nu
-$env.config.completions.external.completer = $tt_completer
+
+let multiple_completers = {|place|
+    match $place.command.0 {
+        tt => $tt_completer
+        _ => return
+    } | do $in $place
+}
+$env.config.completions.external.completer = $multiple_completers

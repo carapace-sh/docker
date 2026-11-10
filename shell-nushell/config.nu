@@ -33,3 +33,5 @@ $env.config = {
 }
 
 use ~/.cache/starship/init.nu
+source ~/.cache/tt/init.nu
+$env.config.completions.external.completer = $tt_completer

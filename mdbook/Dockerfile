@@ -1,6 +1,7 @@
 FROM ghcr.io/carapace-sh/base
 ARG version=0.5.4
 ARG asciinema_version=0.0.4
+ARG catppuccin_version=0.0.1
 
 RUN apt-get update && apt-get install -y git jq unzip
 
@@ -13,3 +14,5 @@ RUN curl -L "https://github.com/marxin/mdbook-linkcheck2/releases/download/v0.13
  && mv mdbook-linkcheck2 /usr/local/bin/
 RUN curl -L "https://github.com/carapace-sh/mdbook-asciinema/releases/download/v${asciinema_version}/mdbook-asciinema_${asciinema_version}_linux_amd64.tar.gz" | tar -xvz mdbook-asciinema \
  && mv mdbook-asciinema /usr/local/bin/
+RUN curl -L "https://github.com/carapace-sh/mdbook-catppuccin/releases/download/v${catppuccin_version}/mdbook-catppuccin_${catppuccin_version}_linux_amd64.tar.gz" | tar -xvz mdbook-catppuccin \
+ && mv mdbook-catppuccin /usr/local/bin/
